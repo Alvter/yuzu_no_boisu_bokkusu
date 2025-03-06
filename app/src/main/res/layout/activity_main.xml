@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 添加 GridLayout 内容 -->
+    <GridLayout
+        android:id="@+id/gridLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:padding="16dp"
+        android:layout_below="@id/textView"
+        android:layout_marginTop="0dp"
+        tools:ignore="NotSibling">
+
+        <!-- 立直部分 -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="立直"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="35sp"
+            android:layout_columnSpan="2"
+            android:layout_marginBottom="8dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:text="立直"
+            android:textSize="25sp"
+            android:id="@+id/lizhiButton"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:text="双立直"
+            android:textSize="25sp"
+            android:id="@+id/wlizhiButton"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1" />
+
+        <!-- 鸣牌部分 -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="鸣牌"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="35sp"
+            android:layout_columnSpan="2"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:text="吃"
+            android:textSize="25sp"
+            android:id="@+id/chiButton"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:text="碰"
+            android:textSize="25sp"
+            android:id="@+id/pongButton"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:text="杠"
+            android:textSize="25sp"
+            android:id="@+id/kangButton"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:text="拔北"
+            android:textSize="25sp"
+            android:id="@+id/bbeiButton"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1" />
+
+        <!-- 和牌部分 -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="和牌"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="35sp"
+            android:layout_columnSpan="2"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_columnWeight="1" />
+
+        <Button
+            android:text="荣"
+            android:textSize="25sp"
+            android:id="@+id/rongButton"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:text="自摸"
+            android:textSize="25sp"
+            android:id="@+id/zimoButton"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_columnWeight="1" />
+
+    </GridLayout>
+
+    <!-- 底部选项按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/option1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="选项 1"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/option2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="选项 2"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/option3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="选项 3" />
+    </LinearLayout>
+
+</RelativeLayout>
