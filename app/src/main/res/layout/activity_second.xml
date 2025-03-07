@@ -1,36 +1,730 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <!-- 其他内容区域，可以放置一些文本或图片 -->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="这是第二个界面"
-        android:textSize="20sp"
-        android:layout_gravity="center"/>
-
-    <!-- 选项框 -->
-    <Spinner
-        android:id="@+id/spinnerOption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/textView"
-        android:layout_marginTop="20dp" />
-
-    <!-- res/layout/spinner_item.xml -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:padding="8dp"
-        android:textSize="18sp"
-        android:textColor="#000000"/>
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomButtons"
+        android:padding="0dp"
+        android:scrollbars="vertical">
+        <!-- 添加 GridLayout 内容 -->
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="4"
+            android:padding="8dp"
+            android:layout_below="@id/textView"
+            android:layout_marginTop="0dp"
+            tools:ignore="NotSibling">
 
+            <!-- 立直部分 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="立直"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_columnSpan="4"
+                android:layout_marginBottom="0dp"
+                android:layout_columnWeight="1"
+                />
+
+            <CheckBox
+                android:text="立直"
+                android:textSize="16sp"
+                android:id="@+id/lizhiButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_red"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="双立直"
+                android:textSize="16sp"
+                android:id="@+id/wlizhiButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_red"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="一发"
+                android:textSize="16sp"
+                android:id="@+id/yifaButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_red"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <!-- 役牌部分 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="役牌"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_columnSpan="4"
+                android:layout_marginBottom="0dp"
+                android:layout_columnWeight="1" />
+
+            <CheckBox
+                android:text="东风"
+                android:textSize="16sp"
+                android:id="@+id/chiButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_orange"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="南风"
+                android:textSize="16sp"
+                android:id="@+id/pongButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_orange"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="西风"
+                android:textSize="16sp"
+                android:id="@+id/kangButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_orange"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="北风"
+                android:textSize="16sp"
+                android:id="@+id/bbeiButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_orange"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="连东"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_orange"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="连南"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_orange"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="连西"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_orange"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="连北"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_orange"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="白"
+                android:textSize="16sp"
+                android:id="@+id/baiButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_orange"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="发"
+                android:textSize="16sp"
+                android:id="@+id/faButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_orange"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+
+            <CheckBox
+                android:text="中"
+                android:textSize="16sp"
+                android:id="@+id/zhongButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_orange"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="小三元"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_orange"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+
+            <!-- 幺九部分 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="幺九"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_columnSpan="4"
+                android:layout_columnWeight="1" />
+
+            <CheckBox
+                android:text="断幺九"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_yellow"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="纯全"
+                android:textSize="16sp"
+                android:id="@+id/rongButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_yellow"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="混全"
+                android:textSize="16sp"
+                android:id="@+id/zimoButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_yellow"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="混老头"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_yellow"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <!-- 顺子部分 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="顺子"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_columnSpan="4"
+                android:layout_columnWeight="1" />
+
+            <CheckBox
+                android:text="平和"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_green"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="一杯口"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_green"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="二杯口"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_green"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <TextView
+                android:text=" "
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1" />
+
+            <CheckBox
+                android:text="三色同顺"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_green"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="一气贯通"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_green"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <!-- 刻子部分 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="刻子"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_columnSpan="4"
+                android:layout_columnWeight="1" />
+
+            <CheckBox
+                android:text="三色同刻"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_cyan"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="对对和"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_cyan"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="三暗刻"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_cyan"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="三杠子"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_cyan"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <!-- 其他部分 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="其他"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_columnSpan="4"
+                android:layout_columnWeight="1" />
+
+            <CheckBox
+                android:text="门清自摸"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_blue"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="七对子"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_blue"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="混一色"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_blue"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="清一色"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_blue"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="抢杠"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_blue"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="岭上"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_blue"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="海底捞月"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_blue"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true"/>
+
+            <CheckBox
+                android:text="河底捞鱼"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_blue"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true" />
+
+            <!-- 宝牌部分 -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="宝牌"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_columnSpan="4"
+                android:layout_columnWeight="1" />
+
+            <CheckBox
+                android:text="宝牌"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_purple"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true" />
+
+            <EditText
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_purple"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="13dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:inputType="number"
+                android:cursorVisible="false"
+                android:hint="宝牌数"
+                android:maxLength="2"
+                android:importantForAccessibility="yes" />
+
+            <CheckBox
+                android:text="红宝牌"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_purple"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true" />
+
+            <EditText
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_purple"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="13dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:inputType="number"
+                android:cursorVisible="false"
+                android:hint="宝牌数"
+                android:maxLength="2"
+                android:importantForAccessibility="yes" />
+
+            <CheckBox
+                android:text="里宝牌"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_purple"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="8dp"
+                android:focusable="false"
+                android:clickable="true" />
+
+            <EditText
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/checkbox_background_purple"
+                android:button="@null"
+                android:textColor="@color/checkbox_custom_text_color"
+                android:gravity="center"
+                android:padding="13dp"
+                android:focusable="true"
+                android:clickable="true"
+                android:inputType="number"
+                android:cursorVisible="false"
+                android:hint="宝牌数"
+                android:maxLength="2"
+                android:importantForAccessibility="yes" />
+
+        </GridLayout>
+    </ScrollView>
 
     <!-- 底部选项按钮 -->
     <LinearLayout
+        android:id="@+id/bottomButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -51,7 +745,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="选项 2"
+            android:text="报菜名"
             android:layout_marginEnd="8dp" />
 
         <Button

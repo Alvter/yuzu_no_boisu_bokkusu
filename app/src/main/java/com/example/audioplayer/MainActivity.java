@@ -1,16 +1,12 @@
 package com.example.audioplayer;
 
-import android.annotation.SuppressLint;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -91,9 +87,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // 加载音频
-    private MediaPlayer loadVoice(String voiceName){
-        int resId = getResources().getIdentifier(characterName + "_" + voiceName, "raw", getPackageName());
-        return MediaPlayer.create(this, resId);
+    private MediaPlayer loadVoice(String voiceName) {
+        MediaPlayer mediaPlayer = null;
+        try {
+            int resId = getResources().getIdentifier(characterName + "_" + voiceName, "raw", getPackageName());
+            mediaPlayer = MediaPlayer.create(this, resId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return mediaPlayer;
     }
 
     @Override

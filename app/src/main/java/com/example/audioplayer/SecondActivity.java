@@ -17,7 +17,6 @@ public class SecondActivity extends AppCompatActivity {
     private Button option1Button;
     private Button option3Button;
 
-    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +43,6 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
-        spinner = findViewById(R.id.spinnerOption);
 
         // 创建一个数组，表示可选的值（0到13）
         Integer[] options = new Integer[14];
@@ -52,12 +50,6 @@ public class SecondActivity extends AppCompatActivity {
             options[i] = i;
         }
 
-        // 使用 ArrayAdapter 来为 Spinner 提供选项
-        ArrayAdapter<Integer> adapter = new ArrayAdapter<>(this, R.layout.spinner_item, options);
-        adapter.setDropDownViewResource(R.layout.spinner_item);
-
-        // 设置适配器
-        spinner.setAdapter(adapter);
 
 //        // 创建一个数组，表示可选的值（0到13）
 //        Integer[] options = new Integer[14];
