@@ -64,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
         loadButtonListener(bbeiButton, "bbei");
         loadButtonListener(rongButton, "rong");
         loadButtonListener(zimoButton, "zimo");
-
     }
 
     private void loadButtonListener(Button button,String str) {
