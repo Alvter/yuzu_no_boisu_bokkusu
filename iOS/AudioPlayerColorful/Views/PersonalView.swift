@@ -55,15 +55,15 @@ struct PersonView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     // 修改编辑资料按钮
-                                   NavigationLink {
-                                       EditProfileView()
-                                   } label: {
-                                       Text("编辑资料")
-                                           .frame(width: 200)
-                                           .padding(.vertical, 8)
-                                   }
-                                   .buttonStyle(.bordered)
-                                   .tint(.blue)
+                    NavigationLink {
+                        EditProfileView()
+                    } label: {
+                        Text("编辑资料")
+                            .frame(width: 200)
+                            .padding(.vertical, 8)
+                    }
+                        .buttonStyle(.bordered)
+                        .tint(.blue)
                     
                     // 功能列表
                     Section {
