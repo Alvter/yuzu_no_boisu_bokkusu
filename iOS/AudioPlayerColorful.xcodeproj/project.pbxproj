@@ -51,6 +51,13 @@
 			);
 			target = E31793512D7AEBAC00F7BED4 /* AudioPalyerWightsExtension */;
 		};
+		E347986F2D7FE00600CEE7DB /* Exceptions for "AudioPlayerColorful" folder in "AudioPlayerColorful" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E375E9282D7AA3B00056D114 /* AudioPlayerColorful */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -64,6 +71,9 @@
 		};
 		E375E92B2D7AA3B00056D114 /* AudioPlayerColorful */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E347986F2D7FE00600CEE7DB /* Exceptions for "AudioPlayerColorful" folder in "AudioPlayerColorful" target */,
+			);
 			path = AudioPlayerColorful;
 			sourceTree = "<group>";
 		};
@@ -377,6 +387,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AudioPlayerColorful/Info.plist;
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -434,6 +447,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AudioPlayerColorful/Info.plist;
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;

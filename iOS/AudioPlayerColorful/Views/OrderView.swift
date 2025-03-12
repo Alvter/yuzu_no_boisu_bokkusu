@@ -16,7 +16,7 @@ struct OrderView: View
     // define a grid layout with fixed width
     private var columns: [GridItem]
     {
-        [GridItem(.adaptive(minimum: 60, maximum: 140), spacing: 15)]
+        [GridItem(.adaptive(minimum: 70, maximum: 100), spacing: 10)]
     }
 
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
@@ -28,6 +28,7 @@ struct OrderView: View
         "幺九": .yellow,
         "顺子": .green,
         "刻子": .blue,
+        "宝牌": .pink,
         "其他": .purple
     ]
 
