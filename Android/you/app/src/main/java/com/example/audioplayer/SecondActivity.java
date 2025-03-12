@@ -3,10 +3,13 @@ package com.example.audioplayer;
 import com.example.audioplayer.R;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.content.Intent;
+import android.widget.EditText;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,6 +79,16 @@ public class SecondActivity extends AppCompatActivity {
                     }
                 }
 
+                int[] checkBoxIds = {R.id.dora, R.id.rdora, R.id.dora2};
+                int[] editTextIds = {R.id.doraEdit, R.id.rdoraEdit, R.id.dora2Edit};
+
+                for (int i = 0; i < checkBoxIds.length; i++) {
+                    CheckBox checkBox = findViewById(checkBoxIds[i]);
+                    if (checkBox.isChecked()) {
+                        addDoraVoice(editTextIds[i], selectedPlayers);
+                    }
+                }
+
                 // 按顺序播放选中的音频
                 isPlay = true;
                 playSelectedAudio(selectedPlayers);
@@ -98,87 +111,51 @@ public class SecondActivity extends AppCompatActivity {
 
     // 加载Checked
     private void loadAllChecked() {
-        checkBoxes.add(findViewById(R.id.lizhi));
-        checkBoxes.add(findViewById(R.id.wlizhi));
-        checkBoxes.add(findViewById(R.id.yifa));
-        checkBoxes.add(findViewById(R.id.qianggang));
-        checkBoxes.add(findViewById(R.id.lingshang));
-        checkBoxes.add(findViewById(R.id.haidi));
-        checkBoxes.add(findViewById(R.id.hedi));
-        checkBoxes.add(findViewById(R.id.zimo2));
-        checkBoxes.add(findViewById(R.id.pinghe));
-        checkBoxes.add(findViewById(R.id.yibeikou));
-        checkBoxes.add(findViewById(R.id.erbeikou));
-        checkBoxes.add(findViewById(R.id.qidui));
-        checkBoxes.add(findViewById(R.id.bai));
-        checkBoxes.add(findViewById(R.id.fa));
-        checkBoxes.add(findViewById(R.id.zhong));
-        checkBoxes.add(findViewById(R.id.dong));
-        checkBoxes.add(findViewById(R.id.nan));
-        checkBoxes.add(findViewById(R.id.xi));
-        checkBoxes.add(findViewById(R.id.bei));
-        checkBoxes.add(findViewById(R.id.wdong));
-        checkBoxes.add(findViewById(R.id.wnan));
-        checkBoxes.add(findViewById(R.id.wxi));
-        checkBoxes.add(findViewById(R.id.wbei));
-        checkBoxes.add(findViewById(R.id.duanyao));
-        checkBoxes.add(findViewById(R.id.hunquan));
-        checkBoxes.add(findViewById(R.id.yiqi));
-        checkBoxes.add(findViewById(R.id.sanshun));
-        checkBoxes.add(findViewById(R.id.sanke));
-        checkBoxes.add(findViewById(R.id.sangangzi));
-        checkBoxes.add(findViewById(R.id.duidui));
-        checkBoxes.add(findViewById(R.id.sananke));
-        checkBoxes.add(findViewById(R.id.ssanyuan));
-        checkBoxes.add(findViewById(R.id.hunlaotou));
-        checkBoxes.add(findViewById(R.id.chunquan));
-        checkBoxes.add(findViewById(R.id.hun));
-        checkBoxes.add(findViewById(R.id.qing));
+        int[] ids = {
+                R.id.lizhi, R.id.wlizhi, R.id.yifa, R.id.qianggang, R.id.lingshang, R.id.haidi,
+                R.id.hedi, R.id.zimo2, R.id.pinghe, R.id.yibeikou, R.id.erbeikou, R.id.qidui,
+                R.id.bai, R.id.fa, R.id.zhong, R.id.dong, R.id.nan, R.id.xi, R.id.bei,
+                R.id.wdong, R.id.wnan, R.id.wxi, R.id.wbei, R.id.duanyao, R.id.hunquan,
+                R.id.yiqi, R.id.sanshun, R.id.sanke, R.id.sangangzi, R.id.duidui, R.id.sananke,
+                R.id.ssanyuan, R.id.hunlaotou, R.id.chunquan, R.id.hun, R.id.qing
+        };
+
+        for (int id : ids) {
+            checkBoxes.add(findViewById(id));
+        }
     }
+
 
     // 加载音频
     private void loadAllVoice() {
-        loadVoice("lizhi");
-        loadVoice("wlizhi");
-        loadVoice("yifa");
-        loadVoice("qianggang");
-        loadVoice("lingshang");
-        loadVoice("haidi");
-        loadVoice("hedi");
-        loadVoice("zimo2");
-        loadVoice("pinghe");
-        loadVoice("yibeikou");
-        loadVoice("erbeikou");
-        loadVoice("qidui");
-        loadVoice("bai");
-        loadVoice("fa");
-        loadVoice("zhong");
-        loadVoice("dong");
-        loadVoice("nan");
-        loadVoice("xi");
-        loadVoice("bei");
-        loadVoice("wdong");
-        loadVoice("wnan");
-        loadVoice("wxi");
-        loadVoice("wbei");
-        loadVoice("duanyao");
-        loadVoice("hunquan");
-        loadVoice("yiqi");
-        loadVoice("sanshun");
-        loadVoice("sanke");
-        loadVoice("sangangzi");
-        loadVoice("duidui");
-        loadVoice("sananke");
-        loadVoice("ssanyuan");
-        loadVoice("hunlaotou");
-        loadVoice("chunquan");
-        loadVoice("hun");
-        loadVoice("qing");
+        String[] voices = {
+                "lizhi", "wlizhi", "yifa", "qianggang", "lingshang", "haidi", "hedi",
+                "zimo2", "pinghe", "yibeikou", "erbeikou", "qidui", "bai", "fa", "zhong",
+                "dong", "nan", "xi", "bei", "wdong", "wnan", "wxi", "wbei", "duanyao",
+                "hunquan", "yiqi", "sanshun", "sanke", "sangangzi", "duidui", "sananke",
+                "ssanyuan", "hunlaotou", "chunquan", "hun", "qing", "dora", "dora2",
+                "dora3", "dora4", "dora5", "dora6", "dora7", "dora8",
+        };
+
+        for (String voice : voices) {
+            loadVoice(voice);
+        }
     }
+
     private void loadVoice(String voiceName){
         int resId = getResources().getIdentifier(characterName + "_" + voiceName, "raw", getPackageName());
         mediaPlayers.add(MediaPlayer.create(this, resId));
     }
+
+    private void addDoraVoice(int editTextId, List<MediaPlayer> mediaPlayer) {
+        EditText editText = findViewById(editTextId);
+        String dora = editText.getText().toString();
+        int resId = getResources().getIdentifier(characterName + "_dora" + dora, "raw", getPackageName());
+        // 打印拼接出来的资源名以便调试
+        String resourceName = characterName + "_dora" + dora;
+        mediaPlayer.add(MediaPlayer.create(this, resId));
+    }
+
 
     private void playSelectedAudio(List<MediaPlayer> selectedPlayers) {
         if (selectedPlayers.isEmpty()) {

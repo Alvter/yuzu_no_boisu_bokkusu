@@ -664,6 +664,7 @@
 
             <EditText
                 android:textSize="16sp"
+                android:id="@+id/doraEdit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -697,6 +698,7 @@
 
             <EditText
                 android:textSize="16sp"
+                android:id="@+id/rdoraEdit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
@@ -730,6 +732,7 @@
 
             <EditText
                 android:textSize="16sp"
+                android:id="@+id/dora2Edit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
