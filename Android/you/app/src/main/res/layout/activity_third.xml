@@ -25,7 +25,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="选项 1"
+            android:text="鸣牌"
             android:layout_marginEnd="8dp" />
 
         <Button
@@ -33,7 +33,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="选项 2"
+            android:text="报菜名"
             android:layout_marginEnd="8dp" />
 
         <Button
@@ -41,7 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="选项 3" />
+            android:text="主页" />
     </LinearLayout>
 
 </RelativeLayout>
