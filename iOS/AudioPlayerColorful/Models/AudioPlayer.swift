@@ -17,6 +17,7 @@ class AudioPlayer: NSObject, ObservableObject
     private var shouldResetPlayback = false // Reset Sysbolm
     private var playQueue: [String] = []
     private var isQueuePlaying = false
+    @Published var currentRole: String? // 添加当前角色属性
     @Published var currentPlaying: String?  // put the current playing file name here()
     {
         didSet
@@ -64,48 +65,41 @@ class AudioPlayer: NSObject, ObservableObject
     }
     
     // MARK: start playback queue
-    func startPlaybackQueue(for filenames: [String])
-    {
+    func startPlaybackQueue(for filenames: [String], roleName: String) {
         playQueue = filenames
+        currentRole = roleName // 保存当前角色
         isQueuePlaying = true
         playNext()
     }
 
     // MARK: Next play
-    private func playNext()
-    {
-        guard !playQueue.isEmpty
-        else
-        {
-            isQueuePlaying = false
-            return
-        }
-        let filename = playQueue.removeFirst()
-        startPlayback(for: filename)
-    }
-    
-    // MARK: load audio file if needed
-    private func loadAudioIfNeeded(_ filename: String)
-    {
-        guard players[filename] == nil else { return }
-
-            guard let url = Bundle.main.url(forResource: filename, withExtension: "mp3")
-            else
-            {
-                print("Audio file not found: \(filename)")
+        private func playNext() {
+            guard !playQueue.isEmpty else {
+                isQueuePlaying = false
                 return
             }
+            let filename = playQueue.removeFirst()
+            startPlayback(for: filename)
+        }
+    
+    private func loadAudioIfNeeded(_ filename: String) {
+        guard players[filename] == nil else { return }
 
-            do
-            {
-                let player = try AVAudioPlayer(contentsOf: url)
-                player.delegate = self
-                players[filename] = (player: player, shouldReset: true) // initialize player and set shouldReset to true
-            }
-            catch
-            {
-                print("Audio player initialization failed: \(error)")
-            }
+        // 使用角色名前缀构建完整的文件名
+        let fullFilename = filename // 已经包含了角色名前缀
+
+        guard let url = Bundle.main.url(forResource: fullFilename, withExtension: "mp3") else {
+            print("Audio file not found: \(fullFilename)")
+            return
+        }
+
+        do {
+            let player = try AVAudioPlayer(contentsOf: url)
+            player.delegate = self
+            players[filename] = (player: player, shouldReset: true) // initialize player and set shouldReset to true
+        } catch {
+            print("Audio player initialization failed: \(error)")
+        }
     }
     
     // MARK: handle playback interruption
@@ -117,33 +111,29 @@ class AudioPlayer: NSObject, ObservableObject
     }
     
     // MARK: start playback
-    func startPlayback(for filename: String)
-    {
-        loadAudioIfNeeded(filename)
-        
-        guard let playerInfo = players[filename] else { return }
-        let player = playerInfo.player // get player
-        
-        do
-        {
-            #if os(iOS)
-            try AVAudioSession.sharedInstance().setActive(true)
-            #endif
-            
-            if playerInfo.shouldReset || player.currentTime >= player.duration {
-                player.currentTime = 0
-                players[filename]?.shouldReset = false
+        func startPlayback(for filename: String) {
+            loadAudioIfNeeded(filename)
+
+            guard let playerInfo = players[filename] else { return }
+            let player = playerInfo.player // get player
+
+            do {
+                #if os(iOS)
+                try AVAudioSession.sharedInstance().setActive(true)
+                #endif
+
+                if playerInfo.shouldReset || player.currentTime >= player.duration {
+                    player.currentTime = 0
+                    players[filename]?.shouldReset = false
+                }
+
+                player.play() // call play method
+                currentPlaying = filename
+            } catch {
+                print("Playback failed: \(error)")
+                currentPlaying = nil
+            }
         }
-            
-            player.play() // call play method
-            currentPlaying = filename
-        }
-        catch
-        {
-            print("Playback failed: \(error)")
-            currentPlaying = nil
-        }
-    }
     
     override init() {
             super.init()

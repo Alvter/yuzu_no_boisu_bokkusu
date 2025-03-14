@@ -7,19 +7,29 @@
 
 
 // a enum,but why?
-enum Tab: String, CaseIterable
+enum Tab
 {
-    case home = "主页"
-    case order = "报菜名"
-    case more = "更多"
-    case person = "个人"
+    case home
+    case order
+    case more
+    case person
 }
 
 // MARK: Role List
 enum Role: String, CaseIterable, Identifiable {
     case yiji = "一姬"
     case youzi = "柚"
-    //case low = "省流量"
-    
+
     var id: String { self.rawValue }
+
+    var filenamePrefix: String {
+        switch self {
+        case .yiji:
+            return "yiji"
+        case .youzi:
+            return "you"
+        }
+    }
 }
+
+

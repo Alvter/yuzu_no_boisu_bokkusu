@@ -10,6 +10,9 @@
 		E31793552D7AEBAC00F7BED4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31793542D7AEBAC00F7BED4 /* WidgetKit.framework */; };
 		E31793572D7AEBAC00F7BED4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31793562D7AEBAC00F7BED4 /* SwiftUI.framework */; };
 		E31793652D7AEBAD00F7BED4 /* AudioPalyerWightsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E31793522D7AEBAC00F7BED4 /* AudioPalyerWightsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E3D4B2572D81318200A9561C /* ShareToMe.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E3D4B24D2D81318200A9561C /* ShareToMe.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E3EEB2612D8115F10040F3B6 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3EEB2602D8115F10040F3B6 /* Messages.framework */; };
+		E3EEB26D2D8115F20040F3B6 /* iMessageEmotions.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = E3EEB25F2D8115F10040F3B6 /* iMessageEmotions.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,6 +23,20 @@
 			remoteGlobalIDString = E31793512D7AEBAC00F7BED4;
 			remoteInfo = AudioPalyerWightsExtension;
 		};
+		E3D4B2552D81318200A9561C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E375E9212D7AA3AF0056D114 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3D4B24C2D81318200A9561C;
+			remoteInfo = ShareToMe;
+		};
+		E3EEB26B2D8115F20040F3B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E375E9212D7AA3AF0056D114 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3EEB25E2D8115F10040F3B6;
+			remoteInfo = iMessageEmotions;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,7 +46,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				E3EEB26D2D8115F20040F3B6 /* iMessageEmotions.appex in Embed Foundation Extensions */,
 				E31793652D7AEBAD00F7BED4 /* AudioPalyerWightsExtension.appex in Embed Foundation Extensions */,
+				E3D4B2572D81318200A9561C /* ShareToMe.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,6 +60,9 @@
 		E31793542D7AEBAC00F7BED4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
 		E31793562D7AEBAC00F7BED4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
 		E375E9292D7AA3B00056D114 /* AudioPlayerColorful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioPlayerColorful.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3D4B24D2D81318200A9561C /* ShareToMe.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareToMe.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3EEB25F2D8115F10040F3B6 /* iMessageEmotions.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessageEmotions.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3EEB2602D8115F10040F3B6 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -57,6 +79,20 @@
 				Info.plist,
 			);
 			target = E375E9282D7AA3B00056D114 /* AudioPlayerColorful */;
+		};
+		E3D4B25B2D81318200A9561C /* Exceptions for "ShareToMe" folder in "ShareToMe" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E3D4B24C2D81318200A9561C /* ShareToMe */;
+		};
+		E3EEB2712D8115F20040F3B6 /* Exceptions for "iMessageEmotions" folder in "iMessageEmotions" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = E3EEB25E2D8115F10040F3B6 /* iMessageEmotions */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -75,6 +111,22 @@
 				E347986F2D7FE00600CEE7DB /* Exceptions for "AudioPlayerColorful" folder in "AudioPlayerColorful" target */,
 			);
 			path = AudioPlayerColorful;
+			sourceTree = "<group>";
+		};
+		E3D4B24E2D81318200A9561C /* ShareToMe */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E3D4B25B2D81318200A9561C /* Exceptions for "ShareToMe" folder in "ShareToMe" target */,
+			);
+			path = ShareToMe;
+			sourceTree = "<group>";
+		};
+		E3EEB2622D8115F10040F3B6 /* iMessageEmotions */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E3EEB2712D8115F20040F3B6 /* Exceptions for "iMessageEmotions" folder in "iMessageEmotions" target */,
+			);
+			path = iMessageEmotions;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -96,6 +148,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3D4B24A2D81318200A9561C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3EEB25C2D8115F10040F3B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3EEB2612D8115F10040F3B6 /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -104,6 +171,7 @@
 			children = (
 				E31793542D7AEBAC00F7BED4 /* WidgetKit.framework */,
 				E31793562D7AEBAC00F7BED4 /* SwiftUI.framework */,
+				E3EEB2602D8115F10040F3B6 /* Messages.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -113,6 +181,8 @@
 			children = (
 				E375E92B2D7AA3B00056D114 /* AudioPlayerColorful */,
 				E31793582D7AEBAC00F7BED4 /* AudioPalyerWights */,
+				E3EEB2622D8115F10040F3B6 /* iMessageEmotions */,
+				E3D4B24E2D81318200A9561C /* ShareToMe */,
 				E31793532D7AEBAC00F7BED4 /* Frameworks */,
 				E375E92A2D7AA3B00056D114 /* Products */,
 			);
@@ -123,6 +193,8 @@
 			children = (
 				E375E9292D7AA3B00056D114 /* AudioPlayerColorful.app */,
 				E31793522D7AEBAC00F7BED4 /* AudioPalyerWightsExtension.appex */,
+				E3EEB25F2D8115F10040F3B6 /* iMessageEmotions.appex */,
+				E3D4B24D2D81318200A9561C /* ShareToMe.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +237,8 @@
 			);
 			dependencies = (
 				E31793642D7AEBAD00F7BED4 /* PBXTargetDependency */,
+				E3EEB26C2D8115F20040F3B6 /* PBXTargetDependency */,
+				E3D4B2562D81318200A9561C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				E375E92B2D7AA3B00056D114 /* AudioPlayerColorful */,
@@ -175,6 +249,50 @@
 			productName = AudioPlayerColorful;
 			productReference = E375E9292D7AA3B00056D114 /* AudioPlayerColorful.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E3D4B24C2D81318200A9561C /* ShareToMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3D4B25A2D81318200A9561C /* Build configuration list for PBXNativeTarget "ShareToMe" */;
+			buildPhases = (
+				E3D4B2492D81318200A9561C /* Sources */,
+				E3D4B24A2D81318200A9561C /* Frameworks */,
+				E3D4B24B2D81318200A9561C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E3D4B24E2D81318200A9561C /* ShareToMe */,
+			);
+			name = ShareToMe;
+			packageProductDependencies = (
+			);
+			productName = ShareToMe;
+			productReference = E3D4B24D2D81318200A9561C /* ShareToMe.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		E3EEB25E2D8115F10040F3B6 /* iMessageEmotions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3EEB2702D8115F20040F3B6 /* Build configuration list for PBXNativeTarget "iMessageEmotions" */;
+			buildPhases = (
+				E3EEB25B2D8115F10040F3B6 /* Sources */,
+				E3EEB25C2D8115F10040F3B6 /* Frameworks */,
+				E3EEB25D2D8115F10040F3B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				E3EEB2622D8115F10040F3B6 /* iMessageEmotions */,
+			);
+			name = iMessageEmotions;
+			packageProductDependencies = (
+			);
+			productName = iMessageEmotions;
+			productReference = E3EEB25F2D8115F10040F3B6 /* iMessageEmotions.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
 		};
 /* End PBXNativeTarget section */
 
@@ -190,6 +308,12 @@
 						CreatedOnToolsVersion = 16.2;
 					};
 					E375E9282D7AA3B00056D114 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					E3D4B24C2D81318200A9561C = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					E3EEB25E2D8115F10040F3B6 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -210,6 +334,8 @@
 			targets = (
 				E375E9282D7AA3B00056D114 /* AudioPlayerColorful */,
 				E31793512D7AEBAC00F7BED4 /* AudioPalyerWightsExtension */,
+				E3EEB25E2D8115F10040F3B6 /* iMessageEmotions */,
+				E3D4B24C2D81318200A9561C /* ShareToMe */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +349,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E375E9272D7AA3B00056D114 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3D4B24B2D81318200A9561C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3EEB25D2D8115F10040F3B6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,6 +386,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E3D4B2492D81318200A9561C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3EEB25B2D8115F10040F3B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -253,6 +407,16 @@
 			isa = PBXTargetDependency;
 			target = E31793512D7AEBAC00F7BED4 /* AudioPalyerWightsExtension */;
 			targetProxy = E31793632D7AEBAD00F7BED4 /* PBXContainerItemProxy */;
+		};
+		E3D4B2562D81318200A9561C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3D4B24C2D81318200A9561C /* ShareToMe */;
+			targetProxy = E3D4B2552D81318200A9561C /* PBXContainerItemProxy */;
+		};
+		E3EEB26C2D8115F20040F3B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3EEB25E2D8115F10040F3B6 /* iMessageEmotions */;
+			targetProxy = E3EEB26B2D8115F20040F3B6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -269,7 +433,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AudioPalyerWights/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AudioPalyerWights;
+				INFOPLIST_KEY_CFBundleDisplayName = DesktopWights;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -282,9 +446,9 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = SFO.AudioPlayerColorful.AudioPalyerWights;
+				PRODUCT_BUNDLE_IDENTIFIER = SFO.AudioPlayerColorful.DesktopWights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
@@ -308,7 +472,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AudioPalyerWights/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AudioPalyerWights;
+				INFOPLIST_KEY_CFBundleDisplayName = DesktopWights;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,9 +485,9 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = SFO.AudioPlayerColorful.AudioPalyerWights;
+				PRODUCT_BUNDLE_IDENTIFIER = SFO.AudioPlayerColorful.DesktopWights;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SKIP_INSTALL = YES;
@@ -390,7 +554,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AudioPlayerColorful/Info.plist;
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -450,7 +614,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AudioPlayerColorful/Info.plist;
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -465,6 +629,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AudioPlayerColorful/AudioPlayerColorful.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AudioPlayerColorful/Preview Content\"";
@@ -476,7 +641,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -495,6 +660,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = AudioPlayerColorful/AudioPlayerColorful.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AudioPlayerColorful/Preview Content\"";
@@ -506,7 +672,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,6 +680,116 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = SFO.AudioPlayerColorful;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E3D4B2582D81318200A9561C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareToMe/ShareToMe.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UWMB23RHB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShareToMe/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShareToMe;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SFO.AudioPlayerColorful.ShareToMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3D4B2592D81318200A9561C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ShareToMe/ShareToMe.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UWMB23RHB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShareToMe/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShareToMe;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SFO.AudioPlayerColorful.ShareToMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E3EEB26E2D8115F20040F3B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = iMessageEmotions/iMessageEmotions.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UWMB23RHB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iMessageEmotions/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iMessageEmotions;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SFO.AudioPlayerColorful.iMessageEmotions;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3EEB26F2D8115F20040F3B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = iMessageEmotions/iMessageEmotions.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UWMB23RHB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iMessageEmotions/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = iMessageEmotions;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SFO.AudioPlayerColorful.iMessageEmotions;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -546,6 +822,24 @@
 			buildConfigurations = (
 				E375E9382D7AA3B10056D114 /* Debug */,
 				E375E9392D7AA3B10056D114 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3D4B25A2D81318200A9561C /* Build configuration list for PBXNativeTarget "ShareToMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3D4B2582D81318200A9561C /* Debug */,
+				E3D4B2592D81318200A9561C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3EEB2702D8115F20040F3B6 /* Build configuration list for PBXNativeTarget "iMessageEmotions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3EEB26E2D8115F20040F3B6 /* Debug */,
+				E3EEB26F2D8115F20040F3B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

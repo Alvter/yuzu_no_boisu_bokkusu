@@ -11,8 +11,6 @@ import SwiftUI
 struct ContentView: View
 {
     @StateObject var audioPlayer = AudioPlayer()
-    @AppStorage("crossDeviceSync") var crossDeviceSyncEnabled = false
-    @StateObject private var userProfile = UserProfile()
     
     // create a grid layout with adaptive size
     private var columns: [GridItem]
@@ -31,34 +29,34 @@ struct ContentView: View
             // main page view
             HomeView(audioPlayer: audioPlayer)
                 .tabItem
-                {
-                    Label("主页", systemImage: "house")
-                }
-                .tag(Tab.home)
-                
+            {
+                Label("主页", systemImage: selectedTab == .home ? "house.fill" : "house")
+            }
+            .tag(Tab.home)
+            
             // order view
             OrderView(audioPlayer: audioPlayer)
                 .tabItem
-                {
-                    Label("报菜名",systemImage: "square.3.stack.3d.top.fill")
-                }
-                .tag(Tab.order)
+            {
+                Label("报菜名", systemImage: selectedTab == .order ? "square.3.stack.3d" : "square.3.stack.3d.slash")
+            }
+            .tag(Tab.order)
             
             // more view
             MoreView()
                 .tabItem
-                {
-                    Label("更多", systemImage: "ellipsis.circle")
-                }
-                .tag(Tab.more)
-                
+            {
+                Label("更多", systemImage: selectedTab == .more ? "ellipsis.circle.fill" : "ellipsis.circle")
+            }
+            .tag(Tab.more)
+            
             // person view
             PersonView()
                 .tabItem
-                {
-                    Label("个人",systemImage:"person.crop.circle")
-                }
-                .tag(Tab.person)
+            {
+                Label("个人",systemImage: selectedTab ==  .person ? "person.crop.circle.fill" : "person.crop.circle")
+            }
+            .tag(Tab.person)
         }
     }
 }

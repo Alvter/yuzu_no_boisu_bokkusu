@@ -1,14 +1,7 @@
-//
-//  AudioCheckBox.swift
-//  AudioPlayerColorful
-//
-//  Created by 四月初一茶染绮良 on 2025/3/8.
-//
-
 import SwiftUI
 import os.log
 
-// MARK: AudioCheckBox
+// MARK: AudioCheckbox
 struct AudioCheckbox: View
 {
     let audioItem: AudioItem
