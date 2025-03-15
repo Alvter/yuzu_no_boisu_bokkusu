@@ -8,45 +8,34 @@
 import SwiftUI
 
 // MARK: HomeView
-struct HomeView : View
-{
+struct HomeView: View {
     @ObservedObject var audioPlayer: AudioPlayer
-    
+    @AppStorage("SelectedRole") var selectedRole: Role = .yiji // 获取选定的角色
+
     // 定义自适应列布局
-    private var columns: [GridItem]
-    {
+    private var columns: [GridItem] {
         [GridItem(.adaptive(minimum: 70, maximum: 160), spacing: 10)]
     }
-    
+
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
-    
-    var body: some View
-    {
-        NavigationStack
-        {
-            ScrollView
-            {
-                VStack(spacing: 25)
-                {
-                    ForEach(smallAudioGroups)
-                    {
-                        group in
-                        VStack(alignment: .leading, spacing: 12)
-                        {
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 25) {
+                    ForEach(smallAudioGroups) { group in
+                        VStack(alignment: .leading, spacing: 12) {
                             Text(group.groupName)
                                 .font(.headline)
                                 .padding(.horizontal)
                                 .foregroundColor(.blue)
-                            
-                            LazyVGrid(columns: columns, spacing: 15)
-                            {
-                                ForEach(group.items)
-                                {
-                                    item in
+
+                            LazyVGrid(columns: columns, spacing: 15) {
+                                ForEach(group.items) { item in
                                     AudioButton(
-                                        filename: item.filename,
-                                        displayName: item.displayName,
-                                        audioPlayer: audioPlayer
+                                        audioItem: item, // 传递 AudioItem 对象
+                                        audioPlayer: audioPlayer,
+                                        selectedRole: selectedRole // 传递选定的角色
                                     )
                                 }
                             }
@@ -67,22 +56,7 @@ struct HomeView : View
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
-            .toolbar
-            {
-                ToolbarItem(placement: .navigationBarTrailing)
-                {
-                    NavigationLink
-                    {
-                        HomeSettingsView()
-                    }
-                    label:
-                    {
-                        Image(systemName: "gearshape")
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundColor(.blue)
-                    }
-                }
-            }
+            // 移除设置按钮
         }
     }
 }

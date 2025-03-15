@@ -11,8 +11,9 @@ struct AudioOrder: Decodable {
 }
 
 // JSON 数据常量
-let audioOrderJSON = """
+let audioOrderJSON =
+"""
 {
-  "order": ["lizhi", "yifa", "rong", "bai", "mengqing", "other_audio"]
+  "order": ["lizhi","wlizhi","yifa","qianggang","flowerinthehill","moon","fish","menqing","pinghe","yibeikou","erbeikou","sevencouple","white","facai","redmid","eastwind","southwind","westwind","northwind","duanyaojiu","hunquan","yiqi","sansetongshun","sansetongke","sangangzi","duiduihe","sananke","smallsan","hunlaotou","chunquan","hunyi","qingyi","baopai","redbao","dorabbei","insidebao"]
 }
 """

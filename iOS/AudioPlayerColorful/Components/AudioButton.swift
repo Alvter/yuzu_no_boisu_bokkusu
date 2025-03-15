@@ -8,32 +8,29 @@
 import SwiftUI
 
 // MARK: AudioButton
-struct AudioButton: View
-{
-    let filename: String
-    let displayName: String
+struct AudioButton: View {
+    let audioItem: AudioItem // 接收 AudioItem 对象
     @ObservedObject var audioPlayer: AudioPlayer
-    
-    var body: some View
-    {
-        Button(action: { audioPlayer.togglePlayback(for: filename) })
-        {
-            VStack(spacing: 8)
-            {
-                ZStack
-                {
+    var selectedRole: Role = .yiji  // 增加选定的角色属性
+
+    var body: some View {
+        Button(action: {
+            let fullFilename = "\(selectedRole.filenamePrefix)_\(audioItem.filename)"
+            audioPlayer.togglePlayback(for: fullFilename)
+        }) {
+            VStack(spacing: 8) {
+                ZStack {
                     RoundedRectangle(cornerRadius: 16)
-                        .fill(audioPlayer.isPlaying(filename: filename) ? Color.blue : Color.blue.opacity(0.7))
+                        .fill(audioPlayer.isPlaying(filename: "\(selectedRole.filenamePrefix)_\(audioItem.filename)") ? Color.blue : Color.blue.opacity(0.7))
                         .shadow(color: .black.opacity(0.1), radius: 4, y: 2)
-                        //.frame(width: 60,height: 60)
-                    
-                    Image(systemName: audioPlayer.isPlaying(filename: filename) ? "pause.fill" : "play.fill")
+
+                    Image(systemName: audioPlayer.isPlaying(filename: "\(selectedRole.filenamePrefix)_\(audioItem.filename)") ? "pause.fill" : "play.fill")
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
                 }
                 .aspectRatio(1, contentMode: .fit) // keep square shape
-                
-                Text(displayName)
+
+                Text(audioItem.displayName) // 使用 audioItem.displayName
                     .font(.system(size: 16, weight: .medium))
                     .foregroundColor(.primary)
                     .lineLimit(1)
@@ -43,6 +40,10 @@ struct AudioButton: View
             .background(Color(.systemBackground))
             .cornerRadius(12)
             .shadow(radius: 3)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.blue, lineWidth: audioPlayer.isPlaying(filename: "\(selectedRole.filenamePrefix)_\(audioItem.filename)") ? 2 : 0)
+            )
         }
         .buttonStyle(.plain)
     }

@@ -43,10 +43,10 @@ struct ContentView: View
             .tag(Tab.order)
             
             // more view
-            MoreView()
+            SettingsView()
                 .tabItem
             {
-                Label("更多", systemImage: selectedTab == .more ? "ellipsis.circle.fill" : "ellipsis.circle")
+                Label("设置", systemImage: selectedTab == .more ? "gearshape.fill" : "gearshape")
             }
             .tag(Tab.more)
             
@@ -61,20 +61,6 @@ struct ContentView: View
     }
 }
 
-// MARK: 示例子视图（需要自行实现完整功能）
-struct SettingsView: View
-{
-    var body: some View
-    {
-        Form
-        {
-            Section
-            {
-                //Toggle(isOn: "false", label: "")
-            }
-        }
-    }
-}
 
 // MARK: - 修改密码子页面
 struct ChangePasswordView: View {

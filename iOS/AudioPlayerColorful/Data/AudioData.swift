@@ -5,7 +5,6 @@
 //  Created by 四月初一茶染绮良 on 2025/3/8.
 //
 
-
 // MARK: data
 // todo: consider to use localizable string
 let allAudioGroups = [
@@ -67,6 +66,7 @@ let allAudioGroups = [
         items:[
             AudioItem(filename: "baopai", displayName: "宝牌"),
             AudioItem(filename: "redbao", displayName: "红宝牌"),
+            AudioItem(filename: "dorabbei", displayName: "拔北宝牌"),
             AudioItem(filename: "insidebao", displayName: "里宝牌")
         ]
     ),

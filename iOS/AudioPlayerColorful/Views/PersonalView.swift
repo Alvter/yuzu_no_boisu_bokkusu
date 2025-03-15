@@ -68,12 +68,6 @@ struct PersonView: View {
                     // 功能列表
                     Section {
                         NavigationLink {
-                            SettingsView()
-                        } label: {
-                            Label("设置", systemImage: "gear")
-                        }
-                        
-                        NavigationLink {
                             PrivacyView()
                         } label: {
                             Label("隐私设置", systemImage: "lock")
