@@ -42,7 +42,7 @@ struct ContentView: View
             }
             .tag(Tab.order)
             
-            // more view
+            // Settings view
             SettingsView()
                 .tabItem
             {

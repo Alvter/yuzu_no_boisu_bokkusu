@@ -11,7 +11,7 @@ struct OrderView: View {
     // 加载顺序文件 (从常量字符串)
     func loadAudioOrder() -> AudioOrder? {
         guard let jsonData = audioOrderJSON.data(using: .utf8) else {
-            print("JSON 数据转换失败")
+            //print("JSON 数据转换失败")
             return nil
         }
         let decoder = JSONDecoder()
@@ -20,7 +20,7 @@ struct OrderView: View {
             let audioOrder = try decoder.decode(AudioOrder.self, from: jsonData)
             return audioOrder
         } catch {
-            print("解析 JSON 数据失败: \(error)")
+            //print("解析 JSON 数据失败: \(error)")
             return nil
         }
     }
@@ -141,9 +141,9 @@ struct OrderView: View {
 
                 Button(action: {
                     guard let audioOrder = loadAudioOrder() else {
-                        print("无法加载音频顺序，按照选择顺序播放")
+                        //print("无法加载音频顺序，按照选择顺序播放")
                         let sortedFiles = selectedFiles.sorted()
-                        print("播放列表 (默认顺序): \(sortedFiles)") // 打印默认顺序播放列表
+                        //print("播放列表 (默认顺序): \(sortedFiles)") // 打印默认顺序播放列表
                         audioPlayer.startPlaybackQueue(for: sortedFiles, roleName: selectedRole.filenamePrefix)
                         return
                     }
@@ -154,7 +154,7 @@ struct OrderView: View {
                     // 添加角色名前缀
                     let prefixedFiles = orderedFiles.map { "\(selectedRole.filenamePrefix)_\($0)" }
 
-                    print("播放列表 (带前缀): \(prefixedFiles)") // 打印带前缀的播放列表
+                    //print("播放列表 (带前缀): \(prefixedFiles)") // 打印带前缀的播放列表
                     audioPlayer.startPlaybackQueue(for: prefixedFiles, roleName: selectedRole.filenamePrefix)
                 }) {
                     Image(systemName: "play.circle")

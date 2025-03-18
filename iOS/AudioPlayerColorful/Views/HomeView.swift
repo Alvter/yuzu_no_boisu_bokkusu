@@ -56,7 +56,6 @@ struct HomeView: View {
             #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
             #endif
-            // 移除设置按钮
         }
     }
 }
