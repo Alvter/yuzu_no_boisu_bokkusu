@@ -10,7 +10,7 @@ import SwiftUI
 // MARK: HomeView
 struct HomeView: View {
     @ObservedObject var audioPlayer: AudioPlayer
-    @AppStorage("SelectedRole") var selectedRole: Role = .yiji // 获取选定的角色
+    @EnvironmentObject var roleManager: RoleManager // 从 Environment 中获取 RoleManager
 
     // 定义自适应列布局
     private var columns: [GridItem] {
@@ -34,8 +34,7 @@ struct HomeView: View {
                                 ForEach(group.items) { item in
                                     AudioButton(
                                         audioItem: item, // 传递 AudioItem 对象
-                                        audioPlayer: audioPlayer,
-                                        selectedRole: selectedRole // 传递选定的角色
+                                        audioPlayer: audioPlayer
                                     )
                                 }
                             }

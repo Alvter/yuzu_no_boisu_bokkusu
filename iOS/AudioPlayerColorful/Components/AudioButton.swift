@@ -13,13 +13,18 @@ struct AudioButton: View {
     // 接收一个 AudioItem 对象，该对象包含音频的相关信息
     let audioItem: AudioItem
     @ObservedObject var audioPlayer: AudioPlayer
-    // 默认选择的角色，控制音频文件名前缀
-    var selectedRole: Role = .yiji
+    @EnvironmentObject var roleManager: RoleManager
+    @AppStorage("SelectedRoleId") var selectedRoleId: String = "yiji"
+
+    // 计算属性，根据 selectedRoleId 从 RoleManager 中获取 selectedRole
+    var selectedRole: Role? {
+        roleManager.roles.first { $0.id == selectedRoleId }
+    }
 
     var body: some View {
         Button(action: {
             // 创建完整的文件名，包括角色前缀和音频文件名
-            let fullFilename = "\(selectedRole.filenamePrefix)_\(audioItem.filename)"
+            let fullFilename = "\(selectedRole?.filenamePrefix ?? "yiji")_\(audioItem.filename)"
             // 切换音频播放状态
             audioPlayer.togglePlayback(for: fullFilename)
         }) {
@@ -28,10 +33,10 @@ struct AudioButton: View {
                 ZStack {
                     // 设置按钮背景，播放时为蓝色，暂停时为蓝色透明度较低
                     RoundedRectangle(cornerRadius: 16)
-                        .fill(audioPlayer.isPlaying(filename: "\(selectedRole.filenamePrefix)_\(audioItem.filename)") ? Color.blue : Color.blue.opacity(0.7))
+                        .fill(audioPlayer.isPlaying(filename: "\(selectedRole?.filenamePrefix ?? "yiji")_\(audioItem.filename)") ? Color.blue : Color.blue.opacity(0.7))
                         .shadow(color: .black.opacity(0.1), radius: 4, y: 2)
 
-                    Image(systemName: audioPlayer.isPlaying(filename: "\(selectedRole.filenamePrefix)_\(audioItem.filename)") ? "pause.fill" : "play.fill")
+                    Image(systemName: audioPlayer.isPlaying(filename: "\(selectedRole?.filenamePrefix ?? "yiji")_\(audioItem.filename)") ? "pause.fill" : "play.fill")
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
                 }

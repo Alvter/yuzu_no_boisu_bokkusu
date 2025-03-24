@@ -9,22 +9,30 @@ import SwiftUI
 
 // MARK: Settings View
 struct SettingsView: View {
-    @AppStorage("SelectedRole") var selectedRole: Role = .yiji // 获取选定的角色
+    @ObservedObject var roleManager = RoleManager()
+    @AppStorage("SelectedRoleId") var selectedRoleId: String = "yiji" // 使用角色ID存储
+
+    var selectedRole: Role? {
+        roleManager.roles.first { $0.id == selectedRoleId }
+    }
 
     var body: some View {
         NavigationStack {
             Form {
                 Section("角色设置") {
-                    Picker("角色", selection: $selectedRole) {
-                        ForEach(Role.allCases) { role in
-                            Text(role.rawValue).tag(role)
+                    Picker("角色", selection: $selectedRoleId) {
+                        ForEach(roleManager.roles) { role in
+                            Text(role.name).tag(role.id)
                         }
                     }
-                    .pickerStyle(.menu) // iOS 默认下拉样式
+                    .pickerStyle(.menu)
                 }
-                // 可以添加更多的设置选项，例如音量控制、播放速度控制等
             }
             .navigationTitle("设置")
+            .onAppear {
+                // 确保在视图出现时加载角色列表
+                roleManager.loadRoles()
+            }
         }
     }
 }

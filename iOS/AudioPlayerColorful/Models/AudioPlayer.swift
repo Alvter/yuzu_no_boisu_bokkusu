@@ -73,7 +73,7 @@ class AudioPlayer: NSObject, ObservableObject
     }
 
     // MARK: Next play
-        private func playNext() {
+        func playNext() {
             guard !playQueue.isEmpty else {
                 isQueuePlaying = false
                 return
@@ -82,7 +82,7 @@ class AudioPlayer: NSObject, ObservableObject
             startPlayback(for: filename)
         }
     
-    private func loadAudioIfNeeded(_ filename: String) {
+    func loadAudioIfNeeded(_ filename: String) {
         guard players[filename] == nil else { return }
 
         // 使用角色名前缀构建完整的文件名
@@ -103,7 +103,7 @@ class AudioPlayer: NSObject, ObservableObject
     }
     
     // MARK: handle playback interruption
-    private func handlePlaybackInterruption()
+    func handlePlaybackInterruption()
     {
         player?.pause()
         isPlaying = false
@@ -142,7 +142,7 @@ class AudioPlayer: NSObject, ObservableObject
         }
     
     // MARK: set interruption observer in iOS
-    private func setupInterruptionObserver()
+    func setupInterruptionObserver()
     {
         #if os(iOS)
         NotificationCenter.default.addObserver(
@@ -197,7 +197,7 @@ class AudioPlayer: NSObject, ObservableObject
     }
     
     // MARK: pause playback
-    private func pausePlayback(for filename: String)
+    func pausePlayback(for filename: String)
     {
         players[filename]?.player.pause()
         currentPlaying = nil
@@ -205,7 +205,7 @@ class AudioPlayer: NSObject, ObservableObject
     }
 
     // MARK: stop playback
-    private func stopPlayback(for filename: String)
+    func stopPlayback(for filename: String)
     {
         players[filename]?.player.stop()
         players[filename]?.player.currentTime = 0

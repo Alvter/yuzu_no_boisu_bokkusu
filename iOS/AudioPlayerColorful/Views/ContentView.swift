@@ -11,6 +11,8 @@ import SwiftUI
 struct ContentView: View
 {
     @StateObject var audioPlayer = AudioPlayer()
+    @StateObject var roleManager = RoleManager() // 初始化 RoleManager
+    @StateObject var orderViewModel = OrderViewModel() // 创建 OrderViewModel 的实例
     
     // create a grid layout with adaptive size
     private var columns: [GridItem]
@@ -28,6 +30,7 @@ struct ContentView: View
         {
             // main page view
             HomeView(audioPlayer: audioPlayer)
+                .environmentObject(roleManager)
                 .tabItem
             {
                 Label("主页", systemImage: selectedTab == .home ? "house.fill" : "house")
@@ -35,7 +38,9 @@ struct ContentView: View
             .tag(Tab.home)
             
             // order view
-            OrderView(audioPlayer: audioPlayer)
+            OrderView(audioPlayer: audioPlayer, viewModel: orderViewModel)
+                .environmentObject(roleManager)
+                .environmentObject(orderViewModel) // 将 orderViewModel 注入到环境中
                 .tabItem
             {
                 Label("报菜名", systemImage: selectedTab == .order ? "square.3.stack.3d" : "square.3.stack.3d.slash")
@@ -44,6 +49,7 @@ struct ContentView: View
             
             // Settings view
             SettingsView()
+                .environmentObject(roleManager)
                 .tabItem
             {
                 Label("设置", systemImage: selectedTab == .more ? "gearshape.fill" : "gearshape")
@@ -52,6 +58,7 @@ struct ContentView: View
             
             // person view
             PersonView()
+                .environmentObject(roleManager)
                 .tabItem
             {
                 Label("个人",systemImage: selectedTab ==  .person ? "person.crop.circle.fill" : "person.crop.circle")
@@ -60,7 +67,6 @@ struct ContentView: View
         }
     }
 }
-
 
 // MARK: - 修改密码子页面
 struct ChangePasswordView: View {

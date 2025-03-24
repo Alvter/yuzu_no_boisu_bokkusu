@@ -5,6 +5,7 @@
 //  Created by 四月初一茶染绮良 on 2025/3/8.
 //
 
+import Foundation
 
 // a enum,but why?
 enum Tab
@@ -15,21 +16,12 @@ enum Tab
     case person
 }
 
+
 // MARK: Role List
-enum Role: String, CaseIterable, Identifiable {
-    case yiji = "一姬"
-    case youzi = "柚"
-
-    var id: String { self.rawValue }
-
-    var filenamePrefix: String {
-        switch self {
-        case .yiji:
-            return "yiji"
-        case .youzi:
-            return "you"
-        }
-    }
+struct Role: Identifiable, Codable, Hashable {
+    var id: String
+    var name: String
+    var filenamePrefix: String
 }
 
 

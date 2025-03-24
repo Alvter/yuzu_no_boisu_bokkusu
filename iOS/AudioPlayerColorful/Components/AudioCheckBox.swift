@@ -14,7 +14,8 @@ struct AudioCheckbox: View {
     @Binding var selectedFiles: Set<String>
     let categoryColor: Color
     @Environment(\.colorScheme) var colorScheme // 获取当前的配色方案
-
+    @EnvironmentObject var OrderViewModel: OrderViewModel // 获取 OrderViewModel 的实例
+    
     var isSelected: Bool {
         selectedFiles.contains(audioItem.filename)
     }
@@ -26,6 +27,11 @@ struct AudioCheckbox: View {
                 selectedFiles.remove(audioItem.filename)
             } else {
                 selectedFiles.insert(audioItem.filename)
+            }
+            
+            // 彩蛋逻辑：检查是否点击了“南”按钮
+            if audioItem.filename == "southwind" {
+                OrderViewModel.handleSouthWindTap() // 使用 viewModel 调用
             }
         }) {
             VStack {
