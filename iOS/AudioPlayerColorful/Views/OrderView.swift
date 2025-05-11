@@ -163,7 +163,7 @@ struct OrderView:View {
                     // 添加角色名前缀
                     let prefixedFiles = orderedFiles.map { "\(selectedRole?.filenamePrefix ?? "yiji")_\($0)" }
                     
-                    print("播放列表 (带前缀): \(prefixedFiles)") // 打印带前缀的播放列表
+                    //print("播放列表 (带前缀): \(prefixedFiles)") // 打印带前缀的播放列表
                     audioPlayer.startPlaybackQueue(for: prefixedFiles, roleName: selectedRole?.filenamePrefix ?? "yiji")
                 }) {
                     Image(systemName: "play.circle")
